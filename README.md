@@ -24,7 +24,7 @@ docker run -d -p 9000:9000 -e ASR_MODEL=base -e ASR_ENGINE=openai_whisper onerah
 ### GPU
 
 ```sh
-docker run -d --gpus all -p 9000:9000 -e ASR_MODEL=base -e ASR_ENGINE=openai_whisper onerahmet/openai-whisper-asr-webservice:latest-gpu
+docker run -d --gpus all --runtime nvidia --device /dev/nvidia-uvm --device /dev/nvidia-uvm-tools --device /dev/nvidia-modeset --device /dev/nvidiactl --device /dev/nvidia0 -p 9000:9000 -e ASR_MODEL=base -e ASR_ENGINE=faster_whisper onerahmet/openai-whisper-asr-webservice:latest-gpu
 ```
 
 for more information:
